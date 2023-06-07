@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family:'Times New Roman', Times, serif;
+            background: #2a364f;
+            display: grid;
+            place-items: center;
+        }
+
+        .button{
+            display: inline-block;
+            background: #F8B627;
+            color: #F4F4F4;
+            font-size: 16px;
+            font-weight: normal;
+            width: 132px;
+            text-align: center;
+            border-radius: 3px;
+            transition: 400ms;
+            text-decoration: none;
+            padding: 22px;
+            z-index: 100000;
+        }
+
+        p{
+            text-align: center;
+            color: rgba(255, 255, 255, 1);
+            font-size: 20px;
+        }
+
+        .h1{
+            color: aquamarine;
+        }
+
+        .main-div{
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+        }
+
+        #box{
+            width: 100px;
+            height: 100px;
+            background: gold;
+        }
+
+    </style>
+</head>
+<body>
+    <p id="myP" onmousedown="mouseDown()" onmouseup="mouseUp()">
+        Click the text. The mouseDown() function is triggered when
+        the mouse button is pressed down.
+    </p>
+
+    <div class="main-div">
+        <div id="box"></div>
+    </div>
+
+    <script>
+        function mouseDown() {
+            document.getElementById("myP").style.color = "#F8B627";
+        }
+        function mouseUp() {
+            document.getElementById("myP").style.color = "#fff";
+        }
+
+        const mEnter = document.getElementById('box');
+
+        mEnter.addEventListener('mouseenter', () => {
+            mEnter.style.backgroundColor = 'red';
+            console.log('mouse is entered');
+        })
+        mEnter.addEventListener('mouseleave', () => {
+            mEnter.style.backgroundColor = 'pink';
+            console.log('mouse is left');
+        })
+
+    </script>
+</body>
+</html>
