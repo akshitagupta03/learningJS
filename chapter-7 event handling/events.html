@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="events.css">
+</head>
+<body>
+    <div class="content">
+        <h1>Different Event Types in JavaScript</h1>
+        <div class="button_container">
+            <div class="button_su">
+                <span class="su_button_circle">
+                </span>
+                <a href="#" class="button_su_inner" onclick="alert('No one uses me anymore')">
+                    <span class="button_text_container">
+                        simple inline alert()
+                    </span>
+                </a>
+            </div>
+
+            <div class="button_su">
+                <span class="su_button_circle">
+                </span>
+                <a href="#" class="button_su_inner" onclick="callingFunction()">
+                    <span class="button_text_container">
+                        by calling a function
+                    </span>
+                </a>
+            </div>
+
+            <div class="button_su">
+                <span class="su_button_circle">
+                </span>
+                <a href="#" class="button_su_inner">
+                    <span class="button_text_container" id="thirdWay">
+                        inline event
+                    </span>
+                </a>
+            </div>
+
+            <div class="button_su">
+                <span class="su_button_circle">
+                </span>
+                <a href="#" class="button_su_inner" id="fourthWay">
+                    <span class="button_text_container">
+                        event listeners
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        // 2nd way of writing function
+        const callingFunction = () => {
+            alert('most common way of writing functions');
+        }
+
+        // 3rd way of writing function
+        const thirdWay = document.getElementById('thirdWay');
+        thirdWay.onclick = function() {
+            alert('most common way of writing functions again');
+        }
+        // console.log will overwrite the alert function
+        thirdWay.onclick = function() {
+            console.log('most common way of writing functions again');
+        }
+
+        // 4th way of writing function
+        const fourthWay = document.querySelector('#fourthWay');
+        fourthWay.addEventListener('click', () => {
+            alert('i love this way of writing functions');
+        })
+        // no overwriting takes place in event listener method
+        fourthWay.addEventListener('click', () => {
+            console.log('i love this way of writing functions');
+        })
+
+    </script>
+</body>
+</html>
