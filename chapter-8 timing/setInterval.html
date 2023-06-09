@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family:'Times New Roman', Times, serif;
+            background: #2a364f;
+            display: grid;
+            place-items: center;
+        }
+
+        p{
+            text-align: center;
+            color: rgba(255, 255, 255, 1);
+            font-size: 20px;
+        }
+
+        button{
+            display: inline-block;
+            background: #F8B627;
+            color: #F4F4F4;
+            font-size: 16px;
+            font-weight: normal;
+            width: 132px;
+            text-align: center;
+            border-radius: 3px;
+            transition: 400ms;
+            text-decoration: none;
+            padding: 22px;
+            z-index: 100000;
+        }
+
+        .main-div{
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+            place-items: center;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="main-div">
+        <div>
+            <p>Can you stop me when i reach at 5?</p>
+            <br>
+            <button id="button">Click here</button>
+        </div>
+    </div>
+
+    <script>
+        const stopNum = document.querySelector('p');
+        const button = document.querySelector('#button');
+        let num=0;
+
+        const showMyNum = () => {
+            setInterval( () => {
+                stopNum.innerHTML = `${num}`;
+                num++;
+            }, 1000)
+        }
+        button.addEventListener('click', showMyNum);
+    </script>
+</body>
+</html>
