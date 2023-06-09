@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family:'Times New Roman', Times, serif;
+            background: #2a364f;
+            display: grid;
+            place-items: center;
+        }
+
+        button{
+            display: inline-block;
+            background: #F8B627;
+            color: #F4F4F4;
+            font-size: 16px;
+            font-weight: normal;
+            width: 132px;
+            text-align: center;
+            border-radius: 3px;
+            transition: 400ms;
+            text-decoration: none;
+            padding: 22px;
+            z-index: 100000;
+        }
+
+        p{
+            text-align: center;
+            color: rgba(255, 255, 255, 1);
+            font-size: 20px;
+        }
+
+        .main-div{
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+            place-items: center;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="main-div">
+        <p>Want to know my name?</p>
+        <p id="showName"></p>
+        <br>
+        <button id="button"> Click here </button>
+    </div>
+
+    <script>
+        const myName = document.querySelector('#showName');
+        const button = document.querySelector('#button');
+
+        const showName = () => {
+            myName.innerHTML = "Loading...";
+            setTimeout(() => {
+                myName.innerHTML = "Akshita Gupta";
+            }, 1000)
+        }
+        button.addEventListener('click', showName);
+    </script>
+</body>
+</html>
